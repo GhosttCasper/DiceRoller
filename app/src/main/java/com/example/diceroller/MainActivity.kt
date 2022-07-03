@@ -10,12 +10,20 @@ import androidx.appcompat.app.AppCompatActivity
  * on the screen.
  */
 class MainActivity : AppCompatActivity() {
+
+    /**
+     * This method is called when the Activity is created.
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // Find the Button in the layout
         val rollButton: Button = findViewById(R.id.button)
+
+        // Set a click listener on the button to roll the dice when the user taps the button
         rollButton.setOnClickListener { rollDice() }
+
     }
 
     /**
@@ -43,6 +51,9 @@ class MainActivity : AppCompatActivity() {
     }
 }
 
+/**
+ * Dice with a fixed number of sides.
+ */
 class Dice(private val numSides: Int) {
 
     fun roll(): Int {
